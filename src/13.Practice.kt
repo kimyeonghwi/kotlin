@@ -27,6 +27,8 @@ fun main(array: Array<String>) {
     val a4 = booleanArrayOf(true,false)
 
     //Array를 만드는 방법 (4) -> 람다활용한 방법
-    var a5 = Array(10,{ 0 }) //
+
+    //이렇게 작성하게 되면 사이즈 10인것이 만들어 지고 나머지 값들을 0으로 들어가게된다 .
+    var a5 = Array(10, { 0 }) //
     var a6 = Array(5,{1;2;3;4;5 }) //
 }

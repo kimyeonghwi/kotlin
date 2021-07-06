@@ -13,7 +13,7 @@ fun main(array: Array<String>){
 
     //배열 생성 방법(1)
     //인트만 들어가는 배열
-    var group1 = arrayOf<Int>(1,2,3,4,5,)
+    var group1 = arrayOf<Int>(1,2,3,4,5)
     println(group1 is Array)
 
     //배열 생성 방법(2)

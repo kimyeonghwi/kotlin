@@ -9,6 +9,7 @@ fun main(args: Array<String>){
 
     // list -> 중복을 허용 한다
     val numberList = listOf<Int>(1,2,3)
+
     println(numberList)
     println(numberList.get(0))
     println(numberList[0])
@@ -23,7 +24,6 @@ fun main(args: Array<String>){
     val numberMap = mapOf<String ,Int>("one" to 1, "two" to 2 )
     println()
     println(numberMap.get("one"))
-
 
 
 
