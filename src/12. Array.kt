@@ -16,6 +16,7 @@ fun main(array: Array<String>){
     var group1 = arrayOf<Int>(1,2,3,4,5)
     println(group1 is Array)
 
+    
     //배열 생성 방법(2)
     //여러가지의 타입이 들어가는 배열
     var group2 = arrayOf(1,2, 3.5,"hello")
