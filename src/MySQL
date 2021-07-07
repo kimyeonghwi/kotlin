@@ -1,5 +1,76 @@
 
 
-여기는 SQL 문법 정리 해놓은 것이다.
+여기는 SQL 문법 수시로 보면서 그냥 잊지 않도록 하자 시험 봤었던 부분에 모든게 들어 있는거 같음
 
-SELECT
+1. DB생성 및 테이블 생성
+CREATE DATABASE tableDB
+DROP TABLE IF EXISTS buyTBL, userTBL
+CREATE TABLE buyTBL (
+num INT PRIMARY KYE AUTO_INCREMENT
+등등추가)
+CREATE TABLE userTBL (
+num INT AUTO
+등등
+FOREIGN KEY(num) REFERENCES buyTBL(num)
+);
+
+2.테이블 수정 (칼럼 수정)
+ALTER TABLE buyTBL
+CHANGE COLUMN gName groupName char(4) ;
+
+ALTER TABLE buyTBL DROP COLUMN prodID;
+
+3.데이터 입력
+INSERT INTO uerTBL VALUES(데이터 넣어주기 )
+
+4.내부조인
+SELECT b.name , u.name
+WHERE uerTBL as u INNER JOIN buyTBL as b
+on u.name = b.name
+WHERE b.name = 'khj'
+
+5. 데이터 수정하기
+SELECT * FROM userTbl where YEAR(mDtae) BETWEEN 2006 and 2010;
+UPDATE buyTBL SET price = price + 100 where groupName = '전자'
+
+6.데이터 검색 및 테이블 정렬
+SELECT * FROM userTBL ORDER BY height DESC , name ASC;
+
+7. 그룹화
+SELECT groupName, AVG(price) as '평균 가격'
+FROM buyTBL GROUP BY groupname;
+
+8. 트렌젝션
+start transaction
+savepoint a
+DROP from buyTbl where prodName = '노트북'
+rollback to a;
+
+9. 데이터 사전개념
+데이터 베이스의 데이터를 제외한 모든 정보가 있다. 메타데이터로 구성
+
+10 . dba = 데이터 베이스의 객체  all = 자신의 계정으로 접근 가능한 객체와 타 계정 접근 권한을 가진 모든 객체 user= 현재 소유 객체
+
+2번 시험
+
+1. 인덱스의 장단점
+장 : 속도가 빠르다 ,부하가 적어지고 전체 성능 향상
+단 : 데이터 베이스의 10퍼센트 정도의 용량 , 변경이 자주 일어나면 성능 저하
+
+2. 인덱스 종류
+클러스터 인덱스 : 하나만 생성 가능 , 검색은 빠르지만 변경을 느림
+보조 인덱스 : 인덱스를 생성할떄 별도 페이지 구성 , 데이터 변경 시 클러스터보다 성능 부하가 적음
+보조 인덱스 여러개 가능
+
+4. (3은 그림그리는거 ) 클러스터 인덱스 생성
+ALTER TABLE userTBL
+ADD CONSTRAINT PK_sdjkfl-sdf
+PRIMARY KEY (username);
+
+5. 고유 보조 인덱스 생성
+CREATE UNIQUE INDEX 이름
+ON userTBL(name)
+SHOW INDEX FROM userTBL;
+
+
+
