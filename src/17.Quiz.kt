@@ -6,6 +6,7 @@ fun main() {
 }
 
 fun first(){
+
     val list1 = MutableList(9 , {0})
     val list2 = MutableList(9 , {true})
 
