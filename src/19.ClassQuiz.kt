@@ -28,8 +28,7 @@ fun main(){
     tv.changeup()
     tv.changeup()
     tv.changeup()
-    tv.changeup()
-    tv.changeup()
+
 
 }
 
@@ -75,13 +74,17 @@ class Tv (val chnel : List<String>){
 
     var onOrOff : Boolean = false
     var current = 0
-        set(value) {
+        set(value) { // set메소드로  그위에 있는 변수의 변화를 감지한다.
             field = value
-            if(field >2){
+            if(field>2){
                 field = 0
+            }
+            if(field<0){
+                field = 2
             }
         }
 
+//커런트에 1이 들어가면 벨루도 1이 들어감 set은 값이 할당될때 , get은 값이 불려나갈떄
 
     fun turn (){
        onOrOff = !onOrOff
@@ -94,6 +97,6 @@ class Tv (val chnel : List<String>){
         current = current +1
     }
     fun changdown () {
-        current = current +1
+        current = current -1
     }
 }
