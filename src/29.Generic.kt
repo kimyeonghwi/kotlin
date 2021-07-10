@@ -20,7 +20,7 @@ fun main(args: Array<String>){
 
     //강한 타입을 체크 할수 있다.
     val list3 = listOf(1,2,3,4,"가","나",3.0)
-    val list4 = listOf<Int>(1,2,3,4,"가") // 이렇게 하면 안들어감
+ //    val list4 = listOf<Int>(1,2,3,4,"가") // 이렇게 하면 안들어감
 
     //제너릭을 사용하지 않은 경우
     val list5 = listOf<Any>(1,2,3,"가")// -> Any라는 타입으로 변경된다. 자바에서 object 타입과 같은건가 보다 ㅋㅋ
